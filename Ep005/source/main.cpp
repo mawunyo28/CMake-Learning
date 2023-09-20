@@ -1,13 +1,16 @@
 #include <iostream>
-#include "dog.h"
+#include "cat.h"
 #include "operations.h"
 
 int main()
 {
-    Dog dog1("Fluffy");
+    Cat esi("esi", 7);
+    esi.printInfo();
 
-    dog1.print_info();
-    
+    std::cout << "Sum of 11 and 22 = " << add(11, 22) << std::endl;
+    std::cout << "Difference of 11 and 22 = " << subtract(11, 22) << std::endl;
+    std::cout << "Quotient of 11 and 22 = " << divide(11, 22) << std::endl;
+    std::cout << "Product of 11 and 22 = " << product(11, 22) << std::endl;
 
-    return 0;
+    esi.setCatAge(6);
 }

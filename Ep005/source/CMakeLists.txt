@@ -1,19 +1,13 @@
 cmake_minimum_required(VERSION 3.5)
+project(
+    PractiseApp
+    VERSION 1.0.0
+    DESCRIPTION "Practise what I have learnt in cmake so far"
+    LANGUAGES CXX
+)
 
-project(HelloApp
-        VERSION 0.0.1
-        DESCRIPTION "The leading Hello World App"
-        LANGUAGES CXX)
+add_executable(PractiseAppBinary main.cpp src/cat.cpp src/operations.cpp)
 
-#GLOBING       
-file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
-add_executable(HelloAppBinary main.cpp ${SOURCE_FILES})
+target_compile_features(PractiseAppBinary PRIVATE cxx_std_20)
 
-#Target
-# add_executable(HelloAppBinary 
-#                 main.cpp
-#                 src/operations.cpp 
-#                 src/dog.cpp)
-
-target_compile_features(HelloAppBinary PRIVATE cxx_std_20)
-target_include_directories(HelloAppBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(PractiseAppBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
