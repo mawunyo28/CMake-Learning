@@ -5,6 +5,6 @@ project(HelloApp
         DESCRIPTION "The leading Hello World App"
         LANGUAGES CXX)
 
-add_executable(HelloAppBinary main.cpp)
+add_executable(HelloAppBinary main.cpp Entity.h)
 
 target_compile_features(HelloAppBinary PRIVATE cxx_std_20)
