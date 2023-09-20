@@ -5,11 +5,15 @@ project(HelloApp
         DESCRIPTION "The leading Hello World App"
         LANGUAGES CXX)
 
+#GLOBING       
+file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
+add_executable(HelloAppBinary main.cpp ${SOURCE_FILES})
+
 #Target
-add_executable(HelloAppBinary 
-                main.cpp
-                src/operations.cpp 
-                src/dog.cpp)
+# add_executable(HelloAppBinary 
+#                 main.cpp
+#                 src/operations.cpp 
+#                 src/dog.cpp)
 
 target_compile_features(HelloAppBinary PRIVATE cxx_std_20)
 target_include_directories(HelloAppBinary PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
